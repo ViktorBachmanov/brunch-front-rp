@@ -1,27 +1,16 @@
-<script>
-export default {
-  data() {
-    return {
-      products: null,
-    };
-  },
-  created() {
-    this.fetchData();
-  },
-  methods: {
-    async fetchData() {
-      const response = await fetch(import.meta.env.VITE_API_HOST + "/products");
-      this.products = await response.json();
-    },
-  },
-};
+<script setup>
+import { fetchData } from "../js/util";
+
+const { loading, data, error } = fetchData("products");
 </script>
 
 <template>
   <main>
-    <h3 v-if="!products">Loading...</h3>
+    <h3 v-if="loading">Loading...</h3>
     <!-- {{ products }} -->
-    <table v-if="products">
+    <h3 v-if="error"><span class="error">Ошибка: </span>{{ error }}</h3>
+
+    <table v-if="data">
       <thead>
         <tr>
           <th>ID</th>
@@ -30,7 +19,7 @@ export default {
         </tr>
       </thead>
       <tbody>
-        <tr v-for="product in products" :key="product['id']">
+        <tr v-for="product in data" :key="product['id']">
           <td>
             {{ product["id"] }}
           </td>

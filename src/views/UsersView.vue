@@ -1,34 +1,7 @@
-<script>
-export default {
-  data() {
-    return {
-      loading: false,
-      users: null,
-      error: null,
-    };
-  },
-  created() {
-    this.fetchData();
-  },
-  methods: {
-    async fetchData() {
-      this.loading = true;
-      this.users = this.error = null;
+<script setup>
+import { fetchData } from "../js/util";
 
-      let response;
-
-      try {
-        response = await fetch(import.meta.env.VITE_API_HOST + "/users");
-      } catch (e) {
-        this.error = e.message;
-      } finally {
-        this.loading = false;
-      }
-
-      this.users = await response.json();
-    },
-  },
-};
+const { loading, data, error } = fetchData("users");
 </script>
 
 <template>
@@ -37,7 +10,7 @@ export default {
     <!-- {{ users }} -->
     <h3 v-if="error"><span class="error">Ошибка: </span>{{ error }}</h3>
 
-    <table v-if="users">
+    <table v-if="data">
       <thead>
         <tr>
           <th>ID</th>
@@ -48,7 +21,7 @@ export default {
         </tr>
       </thead>
       <tbody>
-        <tr v-for="user in users" :key="user['id']">
+        <tr v-for="user in data" :key="user['id']">
           <td :style="{ textAlign: 'center' }">
             {{ user["id"] }}
           </td>
