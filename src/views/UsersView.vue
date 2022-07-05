@@ -32,7 +32,7 @@ export default {
       </thead>
       <tbody>
         <tr v-for="user in users" :key="user['id']">
-          <td>
+          <td :style="{ textAlign: 'center' }">
             {{ user["id"] }}
           </td>
           <td>
@@ -49,3 +49,9 @@ export default {
     </table>
   </main>
 </template>
+
+<style scoped>
+td {
+  text-align: left;
+}
+</style>
