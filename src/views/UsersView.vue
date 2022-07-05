@@ -2,7 +2,9 @@
 export default {
   data() {
     return {
+      loading: false,
       users: null,
+      error: null,
     };
   },
   created() {
@@ -10,7 +12,19 @@ export default {
   },
   methods: {
     async fetchData() {
-      const response = await fetch(import.meta.env.VITE_API_HOST + "/users");
+      this.loading = true;
+      this.users = this.error = null;
+
+      let response;
+
+      try {
+        response = await fetch(import.meta.env.VITE_API_HOST + "/users");
+      } catch (e) {
+        this.error = e.message;
+      } finally {
+        this.loading = false;
+      }
+
       this.users = await response.json();
     },
   },
@@ -19,8 +33,10 @@ export default {
 
 <template>
   <main>
-    <h3 v-if="!users">Loading...</h3>
+    <h3 v-if="loading">Loading...</h3>
     <!-- {{ users }} -->
+    <h3 v-if="error"><span class="error">Ошибка: </span>{{ error }}</h3>
+
     <table v-if="users">
       <thead>
         <tr>

@@ -87,3 +87,8 @@ td {
   border: solid 0.5px;
   padding: 0.5em;
 }
+
+.error {
+  color: rgb(153 27 27);
+  margin-right: 1rem;
+}
