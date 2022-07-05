@@ -30,8 +30,9 @@ export default {
 
 <template>
   <main>
+    <h3 v-if="!orders">Loading...</h3>
     {{ orders }}
-    <table>
+    <table v-if="orders">
       <thead>
         <tr>
           <th>&#8470;</th>
