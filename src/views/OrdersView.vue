@@ -14,17 +14,17 @@ export default {
       this.orders = await response.json();
     },
   },
-  computed: {
-    priceTotal() {
-      let sum = 0;
-      this.orders.forEach((order) => {
-        order["products"].forEach((product) => {
-          sum += product["sum"];
-        });
-      });
-      return sum;
-    },
-  },
+  // computed: {
+  //   priceTotal() {
+  //     let sum = 0;
+  //     this.orders.forEach((order) => {
+  //       order["products"].forEach((product) => {
+  //         sum += product["sum"];
+  //       });
+  //     });
+  //     return sum;
+  //   },
+  // },
 };
 </script>
 
@@ -39,7 +39,7 @@ export default {
           <th>ID клиента</th>
           <th>Продукт</th>
           <th>Кол.</th>
-          <th>Итого</th>
+          <th>Сумма</th>
         </tr>
       </thead>
       <tbody v-for="order in orders" :key="order['id']">
@@ -59,13 +59,9 @@ export default {
           <td>
             {{ order["products"][index]["quantity"] }}
           </td>
-          <td>{{ order["products"][index]["sum"] }}</td>
-        </tr>
-      </tbody>
-      <tbody>
-        <tr>
-          <td colspan="4"></td>
-          <td>{{ priceTotal }}</td>
+          <td :rowspan="order['products'].length" v-if="index === 0">
+            {{ order["sum"] }}
+          </td>
         </tr>
       </tbody>
     </table>
