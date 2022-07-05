@@ -20,7 +20,7 @@ export default {
 <template>
   <main>
     <h3 v-if="!users">Loading...</h3>
-    {{ users }}
+    <!-- {{ users }} -->
     <table v-if="users">
       <thead>
         <tr>

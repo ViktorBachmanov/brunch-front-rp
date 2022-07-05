@@ -76,6 +76,13 @@ nav a:first-of-type {
   border: 0;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
 /* @media (min-width: 1024px) {
   body {
     display: flex;

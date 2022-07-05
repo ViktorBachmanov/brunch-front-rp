@@ -20,7 +20,7 @@ export default {
 <template>
   <main>
     <h3 v-if="!products">Loading...</h3>
-    {{ products }}
+    <!-- {{ products }} -->
     <table v-if="products">
       <thead>
         <tr>

@@ -1,23 +1,14 @@
 <template>
-  <div class="welcome">
-    Данное клиент-серверное приложение состоит из двух частей:
-    <ul>
-      <li>Vue 3.0 на хостинге Vercel</li>
-      <li>YII 2.0 RESTful API на хостинге Heroku</li>
-    </ul>
-    В качестве СУБД используется PostgreSQL со следующими таблицами:
-    <img alt="db scheme" src="@/assets/db-2.png" />
-  </div>
+  Данное клиент-серверное SPA приложение состоит из двух частей:
+  <ul>
+    <li>Vue 3.0 + Vue Router на хостинге Vercel</li>
+    <li>YII 2.0 RESTful API на хостинге Heroku</li>
+  </ul>
+  В качестве СУБД используется PostgreSQL со следующими таблицами:
+  <img alt="db scheme" src="@/assets/db-2.png" />
 </template>
 
 <style scoped>
-.welcome {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 2rem;
-}
-
 ul {
   margin: 1rem;
 }

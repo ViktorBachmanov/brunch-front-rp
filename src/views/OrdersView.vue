@@ -14,24 +14,13 @@ export default {
       this.orders = await response.json();
     },
   },
-  // computed: {
-  //   priceTotal() {
-  //     let sum = 0;
-  //     this.orders.forEach((order) => {
-  //       order["products"].forEach((product) => {
-  //         sum += product["sum"];
-  //       });
-  //     });
-  //     return sum;
-  //   },
-  // },
 };
 </script>
 
 <template>
   <main>
     <h3 v-if="!orders">Loading...</h3>
-    {{ orders }}
+    <!-- {{ orders }} -->
     <table v-if="orders">
       <thead>
         <tr>
