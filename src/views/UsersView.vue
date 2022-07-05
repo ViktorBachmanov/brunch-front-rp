@@ -28,6 +28,7 @@ export default {
           <th>Email</th>
           <th>Имя</th>
           <th>Телефон</th>
+          <th>Пароль</th>
         </tr>
       </thead>
       <tbody>
@@ -43,6 +44,9 @@ export default {
           </td>
           <td>
             {{ user["tel"] }}
+          </td>
+          <td>
+            {{ "..." + user["password"]?.slice(-7) }}
           </td>
         </tr>
       </tbody>
