@@ -1,8 +1,20 @@
 <template>
   Данное клиент-серверное SPA приложение состоит из двух частей:
   <ul>
-    <li>Vue 3.0 + Vue Router на хостинге Vercel</li>
-    <li>YII 2.0 RESTful API на хостинге Heroku</li>
+    <li>
+      Vue 3.0 + Vue Router на хостинге Vercel (<a
+        target="_blank"
+        href="https://github.com/ViktorBachmanov/brunch-front-rp"
+        >GitHub</a
+      >)
+    </li>
+    <li>
+      YII 2.0 RESTful API на хостинге Heroku (<a
+        target="_blank"
+        href="https://github.com/ViktorBachmanov/brunch-back"
+        >GitHub</a
+      >)
+    </li>
   </ul>
   В качестве СУБД используется PostgreSQL со следующими таблицами:
   <img alt="db scheme" src="@/assets/db-2.png" />
