@@ -1,5 +1,6 @@
 <script setup>
 import { fetchData } from "../js/util";
+import TheProductTable from "../components/TheProductTable.vue";
 
 const { loading, data, error } = fetchData("products");
 </script>
@@ -10,27 +11,6 @@ const { loading, data, error } = fetchData("products");
     <!-- {{ products }} -->
     <h3 v-if="error"><span class="error">Ошибка: </span>{{ error }}</h3>
 
-    <table v-if="data">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Наименование</th>
-          <th>Цена</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="product in data" :key="product['id']">
-          <td>
-            {{ product["id"] }}
-          </td>
-          <td :style="{ textAlign: 'left' }">
-            {{ product["name"] }}
-          </td>
-          <td>
-            {{ product["price"] }}
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <TheProductTable v-if="data" :products="data" />
   </main>
 </template>
