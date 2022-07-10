@@ -1,6 +1,7 @@
 <script setup>
 import { fetchData } from "../js/util";
-import TheProductTable from "../components/TheProductTable.vue";
+import TheProductsTable from "../components/TheProductsTable.vue";
+import TheProductsModule from "../components/TheProductsModule.vue";
 
 const { loading, data, error } = fetchData("products");
 </script>
@@ -11,6 +12,7 @@ const { loading, data, error } = fetchData("products");
     <!-- {{ products }} -->
     <h3 v-if="error"><span class="error">Ошибка: </span>{{ error }}</h3>
 
-    <TheProductTable v-if="data" :products="data" />
+    <!-- <TheProductsTable v-if="data" :products="data" /> -->
+    <TheProductsModule v-if="data" :products="data" />
   </main>
 </template>
