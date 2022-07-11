@@ -1,16 +1,28 @@
 <script setup>
+import { computed } from "vue";
 import TheProductCard from "./TheProductCard.vue";
 
-defineProps({
+const productsOrder = [5, 1, 3, 2, 4];
+
+const props = defineProps({
   products: Object,
+});
+
+const orderedProducts = computed(() => {
+  return productsOrder.map((productId) => {
+    return props.products.find((product) => productId === product.id);
+  });
 });
 </script>
 
 <template>
-  <TheProductCard
-    v-for="product in products"
-    :name="product.name"
-    :price="product.price"
-    :image="product.image"
-  />
+  <div class="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 2xl:columns-5">
+    <TheProductCard
+      v-for="product in orderedProducts"
+      :name="product.name"
+      :price="product.price"
+      :image="product.image"
+      :id="product.id"
+    />
+  </div>
 </template>
