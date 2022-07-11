@@ -11,5 +11,6 @@ defineProps({
     v-for="product in products"
     :name="product.name"
     :price="product.price"
+    :image="product.image"
   />
 </template>
