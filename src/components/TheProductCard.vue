@@ -20,14 +20,10 @@ const apiHost = import.meta.env.VITE_API_HOST;
 
 <style scoped>
 .productName {
-  @apply text-xs sm:text-sm md:text-base xl:text-lg;
+  @apply text-sm xl:text-base;
 }
 .card {
-  /* min-width: 300px; */
   max-width: 300px;
-  /* page-break-inside: avoid; */
-  /* position: relative; */
-  /* margin-bottom: 0.5em; */
   padding: 0.5em 0;
   box-sizing: border-box;
   border-radius: 0.5em;
@@ -43,11 +39,11 @@ const apiHost = import.meta.env.VITE_API_HOST;
   margin-right: 1em;
   align-self: flex-end;
 
-  @apply text-xs sm:text-sm md:text-base xl:text-lg;
+  @apply text-sm xl:text-base;
 }
 
 img {
-  /* max-width: 90%; */
   margin: 0.5em 0;
+  width: 100%;
 }
 </style>

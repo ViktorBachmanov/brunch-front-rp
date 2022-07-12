@@ -4,7 +4,7 @@ import { RouterLink, RouterView } from "vue-router";
 
 <template>
   <header>
-    <div class="wrapper">
+    <div>
       <nav>
         <RouterLink to="/">Главная</RouterLink>
         <RouterLink to="/users">Клиенты</RouterLink>
@@ -25,9 +25,10 @@ import { RouterLink, RouterView } from "vue-router";
 #app {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
 
   font-weight: normal;
+
+  @apply py-2 sm:py-3 md:py-4 2xl:py-6;
 }
 
 header {
@@ -58,6 +59,8 @@ nav {
   font-size: 1rem;
   text-align: center;
   margin-top: 2rem;
+
+  @apply text-sm xl:text-base;
 }
 
 nav a.router-link-exact-active {
