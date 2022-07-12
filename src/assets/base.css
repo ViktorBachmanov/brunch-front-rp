@@ -77,7 +77,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  @apply bg-stone-100;
+  @apply bg-stone-50;
 }
 
 /*************************/
