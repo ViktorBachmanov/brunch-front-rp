@@ -16,7 +16,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 2xl:columns-5">
+  <div class="productModule">
     <TheProductCard
       v-for="product in products"
       :name="product.name"
@@ -25,3 +25,13 @@ const props = defineProps({
     />
   </div>
 </template>
+
+<style scoped>
+/* .productColumns {
+    @apply columns-1 sm:columns-2 lg:columns-3 xl:columns-4 2xl:columns-5;
+  } */
+.productModule {
+  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5;
+  @apply gap-2 sm:gap-3 md:gap-4 2xl:gap-6;
+}
+</style>
