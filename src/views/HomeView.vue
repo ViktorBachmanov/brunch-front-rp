@@ -7,7 +7,7 @@ fetchData("users");
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <!-- <main> -->
+  <TheWelcome />
+  <!-- </main> -->
 </template>

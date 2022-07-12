@@ -14,7 +14,9 @@ import { RouterLink, RouterView } from "vue-router";
     </div>
   </header>
 
-  <RouterView />
+  <main class="container">
+    <RouterView />
+  </main>
 </template>
 
 <style>
@@ -76,7 +78,14 @@ nav a:first-of-type {
   border: 0;
 }
 
-main {
+/* main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+} */
+
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;

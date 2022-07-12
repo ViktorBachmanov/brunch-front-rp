@@ -11,12 +11,10 @@ const apiHost = import.meta.env.VITE_API_HOST;
 
 <template>
   <div class="card">
+    <h3>{{ name }}</h3>
     <img :src="`${apiHost}/images/${image}`" alt="photo" />
-    <div class="text">
-      <h3>{{ name }}</h3>
-      {{ price }}
-      {{ id }}
-    </div>
+
+    <span class="text-sm md:text-base">{{ price }} &#8381;</span>
   </div>
 </template>
 
@@ -26,15 +24,16 @@ const apiHost = import.meta.env.VITE_API_HOST;
   max-width: 300px;
   page-break-inside: avoid;
   position: relative;
+  margin-bottom: 0.5em;
+  padding: 0.5em;
+  box-sizing: border-box;
+  border-radius: 1em;
+  background-color: white;
+
+  @apply shadow-lg;
 }
 
 img {
-  max-width: 100%;
-}
-
-.text {
-  position: absolute;
-  top: 0;
-  left: 0;
+  /* max-width: 90%; */
 }
 </style>
