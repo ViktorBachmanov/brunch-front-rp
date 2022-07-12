@@ -35,10 +35,18 @@ const apiHost = import.meta.env.VITE_API_HOST;
 <style scoped>
 .desc {
   padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 ul {
   margin: 1rem;
+  list-style-type: disc;
+}
+
+li {
+  line-height: 1.75;
 }
 
 .db-pics {
