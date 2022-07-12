@@ -1,7 +1,3 @@
-<script setup>
-const apiHost = import.meta.env.VITE_API_HOST;
-</script>
-
 <template>
   <div class="desc">
     Данное клиент-серверное SPA приложение состоит из двух частей:
@@ -26,9 +22,9 @@ const apiHost = import.meta.env.VITE_API_HOST;
   </div>
 
   <div class="db-pics">
-    <img :src="`${apiHost}/images/db_user.png`" alt="db_user" />
-    <img :src="`${apiHost}/images/db_product.png`" alt="db_product" />
-    <img :src="`${apiHost}/images/db_order.png`" alt="db_order" />
+    <img src="@/assets/db_user.png" alt="db_user" />
+    <img src="@/assets/db_product.png" alt="db_product" />
+    <img src="@/assets/db_order.png" alt="db_order" />
   </div>
 </template>
 
