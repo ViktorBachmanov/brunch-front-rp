@@ -1,6 +1,5 @@
 <script setup>
-import { computed } from "vue";
-import TheProductCard from "./TheProductCard.vue";
+import ProductCard from "./ProductCard.vue";
 
 const props = defineProps({
   products: Object,
@@ -9,7 +8,7 @@ const props = defineProps({
 
 <template>
   <div class="productModule">
-    <TheProductCard
+    <ProductCard
       v-for="product in products"
       :name="product.name"
       :price="product.price"
