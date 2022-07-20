@@ -8,7 +8,9 @@ export function fetchData(url) {
   loading.value = true;
   data.value = error.value = null;
 
-  fetch(import.meta.env.VITE_API_HOST + "/" + url)
+  fetch(import.meta.env.VITE_API_HOST + "/" + url, {
+    method: "POST",
+  })
     .then((res) => res.json())
     .then((json) => (data.value = json))
     .catch((err) => (error.value = err))
